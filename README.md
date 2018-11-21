@@ -4,6 +4,7 @@
 
  Sistema Web de uma farmácia para a cadeira de Projeto de Software - UFCG 2018.2.
  
+DeadLine: 10/12
 
 ## Componentes:
 - [Jadson Luan](https://github.com/jadsonluan)
