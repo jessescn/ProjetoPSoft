@@ -7,6 +7,7 @@ import br.edu.ufcg.ccc.pharma.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -25,6 +26,11 @@ public class ProductService {
     }
 
     public Batch saveBatch(Batch batch) {
+        if (batch.getExpiration().after(new Date()) && batch.getAmount() > 0)
+            batch.getProduct().setAvailable(true);
+        else
+            batch.getProduct().setAvailable(false);
+
         Product product = productDAO.save(batch.getProduct());
         batch.setProduct(product);
         return batchDAO.save(batch);
