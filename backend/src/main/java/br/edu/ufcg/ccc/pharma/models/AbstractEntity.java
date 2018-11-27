@@ -1,4 +1,4 @@
-package br.edu.ufcg.ccc.pharma.model;
+package br.edu.ufcg.ccc.pharma.models;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
