@@ -19,4 +19,9 @@ public class CategoryService {
     public List<Category> getCategories() {
         return (List<Category>) dao.findAll();
     }
+
+    public Category save(Category category) {
+        if (category == null) throw new RuntimeException("Produto vazio!");
+        return dao.save(category);
+    }
 }
