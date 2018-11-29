@@ -1,6 +1,6 @@
 package br.edu.ufcg.ccc.pharma.repository;
 
-import br.edu.ufcg.ccc.pharma.models.Batch;
+import br.edu.ufcg.ccc.pharma.model.Batch;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

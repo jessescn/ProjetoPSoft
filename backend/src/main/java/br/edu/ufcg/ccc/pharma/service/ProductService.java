@@ -1,7 +1,7 @@
-package br.edu.ufcg.ccc.pharma.services;
+package br.edu.ufcg.ccc.pharma.service;
 
-import br.edu.ufcg.ccc.pharma.models.Batch;
-import br.edu.ufcg.ccc.pharma.models.Product;
+import br.edu.ufcg.ccc.pharma.model.Batch;
+import br.edu.ufcg.ccc.pharma.model.Product;
 import br.edu.ufcg.ccc.pharma.repository.BatchRepository;
 import br.edu.ufcg.ccc.pharma.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;

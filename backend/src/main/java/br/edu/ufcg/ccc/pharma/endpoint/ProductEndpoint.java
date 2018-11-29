@@ -1,8 +1,7 @@
-package br.edu.ufcg.ccc.pharma.controllers;
+package br.edu.ufcg.ccc.pharma.endpoint;
 
-import br.edu.ufcg.ccc.pharma.models.Batch;
-import br.edu.ufcg.ccc.pharma.models.Product;
-import br.edu.ufcg.ccc.pharma.services.ProductService;
+import br.edu.ufcg.ccc.pharma.model.Batch;
+import br.edu.ufcg.ccc.pharma.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,11 +11,11 @@ import javax.transaction.Transactional;
 
 @RestController
 @RequestMapping("products")
-public class ProductController {
+public class ProductEndpoint {
     private final ProductService service;
 
     @Autowired
-    public ProductController(ProductService service) {
+    public ProductEndpoint(ProductService service) {
         this.service = service;
     }
 

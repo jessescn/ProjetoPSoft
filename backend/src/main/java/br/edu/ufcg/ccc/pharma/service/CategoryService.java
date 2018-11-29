@@ -1,6 +1,6 @@
-package br.edu.ufcg.ccc.pharma.services;
+package br.edu.ufcg.ccc.pharma.service;
 
-import br.edu.ufcg.ccc.pharma.models.Category;
+import br.edu.ufcg.ccc.pharma.model.Category;
 import br.edu.ufcg.ccc.pharma.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
