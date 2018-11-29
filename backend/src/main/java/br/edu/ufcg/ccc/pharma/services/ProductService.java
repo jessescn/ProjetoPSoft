@@ -35,4 +35,11 @@ public class ProductService {
         batch.setProduct(product);
         return batchDAO.save(batch);
     }
+
+    public int countStock(long id) {
+        int amount = -1;
+        if (productDAO.existsById(id))
+            amount = batchDAO.findTotalAmount(id);
+        return amount;
+    }
 }
