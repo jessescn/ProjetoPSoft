@@ -12,23 +12,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductService {
+public class ProductBatchService {
     private final ProductRepository productDAO;
     private final BatchRepository batchDAO;
 
     @Autowired
-    public ProductService(ProductRepository productDAO, BatchRepository batchDAO) {
+    public ProductBatchService(ProductRepository productDAO, BatchRepository batchDAO) {
         this.productDAO = productDAO;
         this.batchDAO = batchDAO;
     }
 
-    public List<Product> getProducts() {
-        return (List<Product>) productDAO.findAll();
-    }
-
     public Batch saveBatch(Batch batch) {
         setupAvailability(batch);
-        Product product = productDAO.save(batch.getProduct());
+        Product product = saveProduct(batch.getProduct());
         batch.setProduct(product);
         return batchDAO.save(batch);
     }
@@ -59,4 +55,31 @@ public class ProductService {
             amount = batchDAO.findTotalAmount(id);
         return amount;
     }
+
+    public List<Batch> findAllBatches() {
+        return (List<Batch>) batchDAO.findAll();
+    }
+
+    public Batch findBatchById(long id) {
+        Batch batch = null;
+        Optional<Batch> optional = batchDAO.findById(id);
+        if (optional.isPresent())
+            batch = optional.get();
+        return batch;
+    }
+
+    public void deleteBatch(long id) {
+        batchDAO.deleteById(id);
+    }
+
+    public Product saveProduct(Product product) { return productDAO.save(product); }
+    public void deleteProduct(long id) { productDAO.deleteById(id);}
+    public Product findProductById(long id) {
+        Product product = null;
+        Optional<Product> optional = productDAO.findById(id);
+        if (optional.isPresent())
+            product = optional.get();
+        return product;
+    }
+    public List<Product> findAllProducts() { return (List<Product>) productDAO.findAll(); }
 }
