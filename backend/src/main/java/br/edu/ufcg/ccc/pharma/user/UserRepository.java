@@ -1,6 +1,5 @@
-package br.edu.ufcg.ccc.pharma.repository;
+package br.edu.ufcg.ccc.pharma.user;
 
-import br.edu.ufcg.ccc.pharma.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
