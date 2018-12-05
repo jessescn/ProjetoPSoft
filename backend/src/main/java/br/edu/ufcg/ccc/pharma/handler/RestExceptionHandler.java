@@ -1,21 +1,26 @@
 package br.edu.ufcg.ccc.pharma.handler;
 
+import br.edu.ufcg.ccc.pharma.exceptions.ExceptionDetails;
 import br.edu.ufcg.ccc.pharma.exceptions.ResourceNotFoundDetails;
 import br.edu.ufcg.ccc.pharma.exceptions.ResourceNotFoundException;
 import br.edu.ufcg.ccc.pharma.exceptions.ValidationExceptionDetails;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @ControllerAdvice
-public class RestExceptionHandler {
+public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException rnfException) {
@@ -31,8 +36,10 @@ public class RestExceptionHandler {
         return new ResponseEntity<>(details, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<?> handleMethodArgumentNotValidException(MethodArgumentNotValidException manvException) {
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(
+            MethodArgumentNotValidException manvException, HttpHeaders headers,
+            HttpStatus status, WebRequest request) {
 
         List<FieldError> fieldErrors = manvException.getBindingResult().getFieldErrors();
 
@@ -54,5 +61,21 @@ public class RestExceptionHandler {
                 .build();
 
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleExceptionInternal(
+            Exception ex, Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
+
+        ExceptionDetails exceptionDetails = ExceptionDetails.Builder
+                .newBuilder()
+                .timestamp(new Date().getTime())
+                .status(status.value())
+                .title("Internal exception!")
+                .details(ex.getMessage())
+                .devMessage(ex.getClass().getName())
+                .build();
+
+        return new ResponseEntity<>(exceptionDetails, headers, status);
     }
 }
