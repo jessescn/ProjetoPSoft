@@ -1,8 +1,8 @@
-package br.edu.ufcg.ccc.pharma.endpoint;
+package br.edu.ufcg.ccc.pharma.user;
 
 import br.edu.ufcg.ccc.pharma.exceptions.ResourceNotFoundException;
-import br.edu.ufcg.ccc.pharma.model.User;
-import br.edu.ufcg.ccc.pharma.repository.UserRepository;
+import br.edu.ufcg.ccc.pharma.user.User;
+import br.edu.ufcg.ccc.pharma.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
