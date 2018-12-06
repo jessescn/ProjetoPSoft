@@ -6,10 +6,11 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long id;
 
     @Override
