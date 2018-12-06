@@ -1,11 +1,11 @@
 package br.edu.ufcg.ccc.pharma.user;
 
 import br.edu.ufcg.ccc.pharma.exceptions.ResourceNotFoundException;
-import br.edu.ufcg.ccc.pharma.user.User;
-import br.edu.ufcg.ccc.pharma.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -25,8 +25,8 @@ public class UserEndpoint {
     }
 
     @GetMapping
-    public ResponseEntity<?> listAll() {
-        return new ResponseEntity<>(this.userDAO.findAll(), HttpStatus.OK);
+    public ResponseEntity<?> listAll(Pageable pageable) {
+        return new ResponseEntity<>(this.userDAO.findAll(pageable), HttpStatus.OK);
     }
 
     @GetMapping(path = "/find/{id}")
@@ -57,6 +57,7 @@ public class UserEndpoint {
     }
 
     @DeleteMapping(path = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         this.verifyIfUserExists(id);
 
