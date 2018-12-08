@@ -880,13 +880,13 @@ body {
   text-align: center;
   text-transform: uppercase;
   color:white;
-  font-size: 40px;
-  padding-top: 40px;
+  font-size: 26px;
+  padding-top: 105px;
 }
 
 .home_div{
   background-color:#3399ff;
-  height: 150px;  
+  height: 210px;  
 }
 
 .home-titulo::after {
