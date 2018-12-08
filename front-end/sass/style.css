@@ -366,6 +366,45 @@ body {
   font-family: "Source Sans Pro";
 }
 
+.relatorio__vendas {
+  border: 1px solid #f44242;
+  border-radius: 5px;
+}
+
+.relatorio__linhas {
+  margin: 10px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 10px; 
+}
+
+.relatorio__titulo {
+  text-align: center;
+  font-weight: bold;
+}
+
+.relatorio__elemento  {
+  padding: 5px 0;
+  text-align: center;
+  border-top: 1px solid #f44242;
+}
+
+.relatorio__botao {
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+  background-color: red;
+  cursor: pointer;
+}
+
+.relatorio__botao__add {
+  margin-top: 15px;
+  width: 150px;
+  height: 30px;
+  background-color: rgb(83, 204, 83);
+  cursor: pointer;
+}
+
 .cabecalho {
   background: white;
   padding: 15px;
