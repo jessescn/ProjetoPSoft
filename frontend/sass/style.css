@@ -367,7 +367,8 @@ body {
 }
 
 .relatorio__vendas {
-  border: 1px solid #f44242;
+  border: 1px solid #3399ff
+  ;
   border-radius: 5px;
 }
 
@@ -386,7 +387,8 @@ body {
 .relatorio__elemento  {
   padding: 5px 0;
   text-align: center;
-  border-top: 1px solid #f44242;
+  border-top: 1px solid #3399ff
+  ;
 }
 
 .relatorio__botao {
@@ -473,7 +475,8 @@ body {
 
 .rodape__item::before {
   content: '>';
-  color: #f44242;
+  color: #3399ff
+  ;
   margin-right: 8px;
 }
 
@@ -519,7 +522,8 @@ body {
 }
 
 .depoimentos {
-  background-color: #f44242;
+  background-color: #3399ff
+  ;
   background-image: url("../img/cabecalho-pagina-bg.jpg");
   background-attachment: fixed;
   color: white;
@@ -617,11 +621,13 @@ body {
 .formulario__botao {
   display: block;
   margin: 0 auto;
-  border: 3px solid #f44242;
+  border: 3px solid #3399ff
+  ;
   padding: 5px 20px;
   border-radius: 300px;
   background-color: white;
-  color: #f44242;
+  color: #3399ff
+  ;
   cursor: pointer;
   font-weight: bold;
 }
@@ -728,13 +734,15 @@ body {
 }
 
 .menu-principal__item--atual {
-  color: #f44242;
+  color: #3399ff
+  ;
 }
 
 .pagina-cabecalho {
   padding-top: 140px;
   padding-bottom: 40px;
-  background-color: #f44242;
+  background-color: #3399ff
+  ;
   background-image: url("../img/cabecalho-pagina-bg.jpg");
   background-attachment: fixed;
 }
@@ -877,7 +885,7 @@ body {
 }
 
 .home_div{
-  background-color: #f44242;
+  background-color:#3399ff;
   height: 150px;  
 }
 
@@ -988,7 +996,8 @@ select{
   position: relative;
   margin: 10px;
   height: 200px;
-  background-color: #f44242;
+  background-color: #3399ff
+  ;
 }
 
 .preco{
@@ -1005,7 +1014,8 @@ select{
   margin: 10px;
   border: 1px solid grey;
   border-radius: 8px;
-  background-color: #f44242;
+  background-color: #3399ff
+  ;
   height: 250px;
 
 }
