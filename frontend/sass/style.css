@@ -407,9 +407,6 @@ body {
   cursor: pointer;
 }
 
-.relatorio__botao {
-  background-color: #3399ff;
-}
 
 .relatorio__botao__add {
   margin-top: 15px;
@@ -417,6 +414,10 @@ body {
   height: 30px;
   background-color: rgb(83, 204, 83);
   cursor: pointer;
+}
+
+.relatorio__cor2 {
+  background-color: #ff9933;
 }
 
 .cabecalho {
