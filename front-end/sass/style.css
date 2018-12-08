@@ -541,7 +541,7 @@ body {
 }
 
 .formulario {
-  margin: 100px -15px;
+  margin: 100px 140px;
   background-color: #efecec;
   /* margin-left: -15px;
   margin-right: -15px; */
@@ -561,10 +561,18 @@ body {
 
 
 .formulario__campo {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
   border: 1px solid #c4c4c4;
   border-radius: 5px;
   padding: 5px;
+}
+
+.formulario__label {
+  margin: 0 auto;
+  text-align: center;
+  color: #343434;
 }
 
 .formulario__botao {
@@ -577,10 +585,6 @@ body {
   color: #f44242;
   cursor: pointer;
   font-weight: bold;
-}
-
-label {
-  color: #343434;
 }
 
 .logo {
