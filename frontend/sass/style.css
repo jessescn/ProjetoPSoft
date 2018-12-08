@@ -399,6 +399,18 @@ body {
   cursor: pointer;
 }
 
+.relatorio__botao {
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+  background-color: red;
+  cursor: pointer;
+}
+
+.relatorio__botao {
+  background-color: #3399ff;
+}
+
 .relatorio__botao__add {
   margin-top: 15px;
   width: 150px;
