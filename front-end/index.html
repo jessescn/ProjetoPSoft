@@ -10,57 +10,60 @@
 <body>
     <header class="cabecalho">
         <div class="container">
-            <h1 class="logo">Desing responsivo</h1>
+            <a href="index.html"><h1 class="logo">Desing responsivo</h1></a>
             <nav class="menu-principal menu-principal--fechar">
-                <button class="menu-principal__btn">Abrir/fechar menu</button>
-                <ul class="menu-principal__lista">
+                <button class="menu-principal__btn">Abrir/fechar menu</button>  
+                 <ul class="menu-principal__lista">
                     <li><a class="menu-principal__item menu-principal__item--atual" href="index.html">Home</a></li>
-                    <li><a class="menu-principal__item" href="sobre.html">Sobre nós</a></li>
-                    <li><a class="menu-principal__item" href="portifolio.html">Portfólio</a></li>
-                    <li><a class="menu-principal__item" href="contato.html">Contato</a></li>
-                </ul>
+                    <li><a class="menu-principal__item" href="contato.html">Login</a></li>
+                </ul> 
             </nav>
         </div>
     </header>
     <main>
-        <header class="cabecalho-home">
-            <h2 class="cabecalho-home__titulo">Texto grande aqui!</h2>
-            <p class="cabecalho-home__subtitulo">Um outro texto pequeno aqui</p>
-            <a class="cabecalho-home__role" href="#servicos">Role para ver mais</a>
-        </header>
+     <ul class="categorias">
+        </ul>>
         <section id="servicos">
-            <div class="container">     
-                <h2 class="home__titulo">O que fazemos</h2>
-                <section class="servico">
-                    <img src="img/icone-desenvolvimento-web.png" alt="Icone de desenvolvimento Web">
-                    <h3>Desenvolvimento web</h3>
-                    <p class="servicos__texto">Duis rutrum, dolor placerat porttitor vestibulum <br>
-                    lacus lectus volutpat ex, at fringilla felis nibh vel lectus. <br>
-                    Nullaet finibus felis. Cras in turpis neque. Nullam sit amet <br>
-                    ipsum sed lectus imperdiet aliquam.</p>
-                    <!-- <button>Desenvolvimento web</button> -->
-                </section>
-                <section class="servico">
-                    <img src="img/icone-carrinho-compras.png" alt="Icone de um carrinho de compras">
-                    <h3>E-commerce</h3>
-                    <p class="servicos__texto">Duis sed orci turpis. Suspendisse ut elementum metus. <br>
-                    Proin venenatis efficitur purus, non pretium turpis sodales sit <br>
-                    amet. Morbi consectetur massa a blandit varius.</p>
-                    <!-- <button>E-commerce</button> -->
-                </section>
-                <section class="servico">
-                    <img src="img/icone-cafe.png" alt="Icone xicara de cafe">
-                    <h3>Cafe</h3>
-                    <p class="servicos__texto">Phasellus tempor scelerisque interdum. Praesent luctus sem vitae <br>
-                    felis ornare, in ullamcorper tellus hendrerit. Praesent eu libero <br>
-                    vitae elit interdum efficitur ac et eros. Curabitur tincidunt <br>
-                    lorem sed diam semper viverra. Nulla euismod, mauris ut vestibulum <br>
-                    rhoncus</p>
-                    <!-- <button>Cafe</button> -->
+            <div>
+                <div class="home_div">
+                    </select>   
+                    <h2 class="home-titulo">Produtos</h2>
+                </div>
+                <div class="filter-options">
+                    <span class="filter-text filter-categoria">Selecione uma categoria:</span>
+                    <select class="select-caracteristica filter">
+                        <option>Melhores Ofertas</option>
+                        <option>Menor Preço</option>
+                        <option>Maior Preço</option>
+                        <option>A-Z</option>
+                        <option>Z-A</option>
+                    </select>
+                    <select class="categoria">
+                        <option>Categorias</option>
+                        <option>Medicamentos</option>
+                        <option>Higiene Pessoal</option>
+                        <option>Alimentos</option>
+                        <option>Cosméticos</option>
+                    </select>
+                    <span class="filter filter-text">Filtrar por: </span>
+                </div>
+
+                <section class="products-container">
+                    <div class="produto">
+                        <div class="imagem-produto"></div>
+                        <p>Nome do Produto</p>
+                        <p>Preco:20</p>
+                        <p>Preco:20</p>
+                    </div>
+                    <div class="produto"></div>
+                    <div class="produto"></div>
+                    <div class="produto"></div>
+                    <div class="produto"></div>
+                    <div class="produto"></div>
                 </section>
             </div>
         </section>
-        <section class="depoimentos">
+         <section class="depoimentos">
             <div class="container">
                 <h2 class="home__titulo home__titulo__branco">O que falam de nós</h2>
                 <section class="depoimentos__item">
@@ -71,35 +74,5 @@
             </div>
         </section>
     </main>
-    <footer class="rodape">
-        <div class="rodape__linha-1">
-            <div class="container">
-                <div class="rodape__coluna">
-                    <a href="index.html" class="logo logo--branco">Desing responsivo</a>
-                    <article>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere libero odit eius dolor minus blanditiis eos accusantium dolores incidunt tenetur, rerum aliquid. Impedit, minus omnis ipsum laudantium est ullam ea!</article>
-                </div>
-                <div class="rodape__coluna">
-                    <h2 class="rodape__titulo">Social</h2>
-                    <ul class="rodape__lista">
-                        <li><a class="rodape__item" href="https://twitter.com/" target="_blank">Twitter</a></li>
-                        <li><a class="rodape__item" href="https://facebook.com" target="_blank">Facebook</a></li>
-                        <li><a class="rodape__item" href="https://youtube.com" target="_blank">Youtube</a></li>
-                    </ul>
-                </div>
-                <div class="rodape__coluna">
-                    <h2 class="rodape__titulo">Links</h2>
-                    <ul class="rodape__lista">
-                        <li><a class="rodape__item" href="index.html">Home</a></li>
-                        <li><a class="rodape__item" href="sobre.html">Sobre nós</a></li>
-                        <li><a class="rodape__item" href="portifolio.html">Portfólio</a></li>
-                        <li><a class="rodape__item" href="contato.html">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="rodape__linha-2">
-            2018 - Todos os direitos reservados
-        </div>
-    </footer>
 </body>
 </html>
