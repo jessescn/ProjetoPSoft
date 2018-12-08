@@ -1,0 +1,43 @@
+.pagina-cabecalho {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #cd3f3f;
+    background-image: url('../img/cabecalho-pagina-bg.jpg');
+    background-attachment: fixed;
+}
+
+.pagina-cabecalho__titulo {
+    text-align: center;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.pagina-cabecalho__titulo::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: white;
+    margin: 10px auto;
+}
+
+.pagina-conteudo {
+    padding: 25px 15px;
+}
+
+.pagina-conteudo p {
+    line-height: 22px;
+    color: #3a3a3a;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* .botao-rolar {
+    display: block;
+    margin: 0 auto;
+} */

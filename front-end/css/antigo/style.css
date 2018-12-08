@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('fonts/SourceSansPro-Regular.otf');
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('fonts/SourceSansPro-Bold.otf');
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    font-family: "Source Sans Pro";
+}
+
+.cabecalho {
+    background: white;
+    padding: 15px;
+}
+
+.logo {
+    background-image: url('../img/logotipo-preto.png');
+    background-repeat: no-repeat;
+    display: block;
+    width: 120px;
+    height: 53px;
+    text-indent: -9999px;
+    margin: 0;
+}
+
+.menu-principal__btn {
+    background-image: url('../img/menuprincipal-btn-bg.png');
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    text-indent: -9999px;
+    background-color: white;
+    border-color: #c4c4c4;
+    border-style: solid;
+    border-radius: 5px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.menu-principal__btn--fechar {
+   background-position: -48px 7px;
+
+}
+
+.menu-principal__lista {
+    padding: 0px;
+}
+
+.menu-principal__lista li {
+    list-style: none;
+
+}
+
+.menu-principal__item {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #343434;
+    margin-bottom: 10px;
+}
+
+.menu-principal__item--atual {
+    color: #f44242;
+}
+
+.logo--branco{
+    background-image: url('../img/logotipo-branco.png');
+    margin-bottom: 20px;
+}
+
+.rodape {
+    color: white;
+}
+
+.rodape__linha-1{
+    background-image: url(../img/rodape-bg-md.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-color: #303030;
+    padding: 15px;
+}
+
+.rodape__linha-2{
+    background-color: black;
+    text-align: center;
+    padding: 15px;
+}
+
+.rodape__coluna {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.rodape__titulo {
+    border-bottom: 1px solid white;
+    padding: 0 10px 10px 0;
+    font-size: 18px;
+}
+
+.rodape__item {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+}
