@@ -1,29 +1,37 @@
 package br.edu.ufcg.ccc.pharma.user;
 
-import br.edu.ufcg.ccc.pharma.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
-@Service
+@Service("userService")
 public class UserService {
-    private final UserRepository userDAO;
+
+    private UserRepository userRepository;
 
     @Autowired
-    public UserService(UserRepository userDAO) {
-        this.userDAO = userDAO;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public User saveUser() {
-        return null;
+    public User findUserByEmail(String email) {
+        return this.userRepository.findByEmail(email);
     }
 
-    private void verifyIfUserExists(Long id) {
-        Optional<User> userOptional = this.userDAO.findById(id);
-
-        if (!userOptional.isPresent())
-            throw new ResourceNotFoundException("User not found for ID: " + id);
+    public void saveUser(User user) {
+        user.setAdmin(false);
+        this.save(user);
     }
 
+    public void saveAdmin(User user) {
+        user.setAdmin(true);
+        this.save(user);
+    }
+
+    private void save(User user) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        user.setPassword(encoder.encode(user.getPassword()));
+        user.setActive(1);
+        this.userRepository.save(user);
+    }
 }
