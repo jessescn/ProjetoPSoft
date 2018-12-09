@@ -1,13 +1,12 @@
 package br.edu.ufcg.ccc.pharma.user;
 
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface UserRepository extends PagingAndSortingRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    List<User> findByNameIgnoreCaseContaining(String name);
-    List<User> findByEmailIgnoreCaseContaining(String email);
-    List<User> findByCpf(String cpf);
+    List<User> findByFirstNameIgnoreCaseContaining(String fistName);
+    User findByEmail(String email);
 }

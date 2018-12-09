@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("v1")
 public class UserEndpoint {
 
     private final UserRepository userDAO;
@@ -29,7 +29,7 @@ public class UserEndpoint {
         return new ResponseEntity<>(this.userDAO.findAll(pageable), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/find/{id}")
+    @GetMapping(path = "/user/find/{id}")
     public ResponseEntity<?> getPersonById(@PathVariable("id") Long id) {
 
         verifyIfUserExists(id);
@@ -40,9 +40,9 @@ public class UserEndpoint {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/search/{name}")
+    @GetMapping(path = "/user/search/{name}")
     public ResponseEntity<?> getPersonByName(@PathVariable("name") String name) {
-        List<User> listUsers = this.userDAO.findByNameIgnoreCaseContaining(name);
+        List<User> listUsers = this.userDAO.findByFirstNameIgnoreCaseContaining(name);
 
         if (listUsers.isEmpty())
             throw new ResourceNotFoundException("No user like '" + name + "' was found!");
@@ -50,13 +50,13 @@ public class UserEndpoint {
         return new ResponseEntity<>(listUsers, HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping(path = "/user")
     @Transactional
     public ResponseEntity<?> save(@Valid @RequestBody User user) {
         return new ResponseEntity<>(this.userDAO.save(user), HttpStatus.CREATED);
     }
 
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping(path = "/user/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         this.verifyIfUserExists(id);
@@ -66,7 +66,7 @@ public class UserEndpoint {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping
+    @PutMapping(path = "/user")
     public ResponseEntity<?> update(@RequestBody User user) {
         this.userDAO.save(user);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
